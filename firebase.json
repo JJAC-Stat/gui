@@ -1,0 +1,9 @@
+{
+  "firebase": "jjac-stat",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
