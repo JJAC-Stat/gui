@@ -1,6 +1,6 @@
 {
   "firebase": "jjac-stat",
-  "public": "public",
+  "public": "dist",
   "ignore": [
     "firebase.json",
     "**/.*",
