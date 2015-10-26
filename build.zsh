@@ -5,9 +5,9 @@ rm -rf dist/*
 echo 'Step 1: Copy all the HTML'
 cp src/index.html dist/
 cp src/login.html dist/
-cp src/question.html dist/
-cp src/signup.html dist/
-cp src/home.html dist/
+cp src/activity.html dist/
+cp src/stats.html dist/
+
 # mkdir dist/partials/
 # cp -r src/partials dist/
 
@@ -45,6 +45,5 @@ cp bower_components/font-awesome/fonts/fontawesome-webfont.ttf dist/bower_compon
 cp bower_components/font-awesome/fonts/fontawesome-webfont.woff dist/bower_components/font-awesome/fonts/fontawesome-webfont.woff
 cp bower_components/font-awesome/fonts/fontawesome-webfont.woff2 dist/bower_components/font-awesome/fonts/fontawesome-webfont.woff2
 
-cp questions.json dist/
 
 npm run start:dist
