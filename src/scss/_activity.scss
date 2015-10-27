@@ -13,4 +13,18 @@ header.activity {
 footer {
   position: absolute;
   bottom: 0;
+  width: 100%;
+
+  nav {
+
+    a {
+      padding-left: 10px; padding-right: 10px;
+      text-decoration: none;
+      color: #007CCF;
+    }
+
+    a:hover {
+      color: #A9C6FF;
+    }
+  }
 }
