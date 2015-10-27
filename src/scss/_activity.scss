@@ -10,7 +10,6 @@ header.activity {
   }
 }
 
-
 nav.date {
   background: #eee;
   color: #000000;
@@ -29,7 +28,6 @@ nav.date {
 
 }
 
-
 .footer {
   bottom: 0;
   display: block;
@@ -39,14 +37,6 @@ nav.date {
 
 }
 
-
-section.container {
-  margin: 30% auto 0 auto;
-  float: left;
-  width: 100%;
-  box-sizing: border-box;
-  display: block;
-}
 
 .logged-activities {
       padding: 5%;
@@ -87,28 +77,41 @@ article.activity {
     display: none;
   }
 
-.add-drop-down.show {
-    // position: absolute;
-    display: block;
-    background: #ffffff;
-    border: 1px solid #CBC9C7;
-    padding: 0 5px 10px 5px;
-    right: -45px;
-    top: 50px;
-    // z-index:1; // overlays other elements
 
-            p {
-              text-transform: uppercase;
-              color: #CBC9C7;
-              font-size: 8pt;
-            }
 
-            .text {
-              border: 1px solid #D5D4D4;
-              outline: none;
-              padding: 5px 5px 4px;
-              font-size: 8pt;
-            }
+section.container {
+  margin: 30% auto 0 auto;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+
+  .add-button {
+    display: inline-block;
+  }
+
+  .add-drop-down.show {
+      // position: absolute;
+      display: block;
+      background: #ffffff;
+      border: 1px solid #CBC9C7;
+      padding: 0 5px 10px 5px;
+      right: -45px;
+      top: 50px;
+      // z-index:1; // overlays other elements
+
+          p {
+            text-transform: uppercase;
+            color: #CBC9C7;
+            font-size: 8pt;
+          }
+
+          .text {
+            border: 1px solid #D5D4D4;
+            outline: none;
+            padding: 5px 5px 4px;
+            font-size: 8pt;
+          }
 
             button.add-to-list {
               display: inline-block;
@@ -116,12 +119,12 @@ article.activity {
               font-size: 10pt;
               color: #ffffff;
               padding: 2px 11px;
-
           }
 
-
-          select.unit {
-            margin: 2% 0;
-          }
+            select.unit {
+              margin: 2% 0;
+            }
 
   } //.add-drop-down.show
+
+} //. END SECTION CONTAINER

@@ -4,13 +4,16 @@
             <h2>stats</h2>
           </header>
 
+        <section class="container" ng-repeat="activity in activities">
+          <p>{{activity.datapoints}}</p>
+        </section>
 
 
-        <footer>
+        <section class="footer">
           <nav>
             <a href="#/panel-login">Home</a>
             <a href="#/activity">Activity</a>
             <a href="#/stats">Stats</a>
           </nav>
-        </footer>
+        </section>
         </div> <!-- END .MAIN-CONTENT-->

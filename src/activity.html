@@ -6,19 +6,19 @@
           </header>
           <nav class="date">
             <span class="fa fa-caret-left"></span>
-            <h3>Today</h3>
+            <h3>Date</h3>
             <span class="fa fa-caret-right"></span>
           </nav>
 
           <section class="container">
             <div class="logged-activities">
               <h4 class="logged">Logged Activites</h4>
-              <button class="add-button">+</button>
-
-              <form class="add-drop-down">
+              <a href="#/new"><button class="add-button">+</button></a>
+            <section class="add-drop-down">
+              <form class="add-drop-down" ng-submit="addActivity($form)">
                 <p>Activity</p>
-                <input type="text" class="text" placeholder="New Activity">
-                <input type="text" class="text" placeholder="Amount">
+                <input type="text" class="text" placeholder="New Activity" ng-model="activity.title">
+                <input type="text" class="text" placeholder="Amount" ng-model="activity.datapoints">
                 <p>unit</p> <!-- drop-down menu -->
                   <select class="unit" name="unit">
                     <option value="choose a unit">Choose a unit</option>
@@ -27,15 +27,15 @@
                     <option value="minutes">minutes</option>
                     <option value="hours">hours</option>
                   </select><br><!-- END drop-down menu -->
-                  <input type="date">
-                <button type="submit" class="add-to-list">Add</button>
+                  <input type="date" ng-model="activity.timestamp">
+                <a href="#/activity/new"><button type="submit" class="add-to-list">Add</button></a>
               </form>
-
+            </section>
           </div>
 
             <article class="activity" ng-repeat="activity in activities">
               <h5>{{activity.title}}</h5>
-              <a href="#/stats"><span class="fa fa-caret-right"></span></a>
+              <a href="#/stats/{{activity.id}}"><span class="fa fa-caret-right"></span></a>
             </article>
 
           </section>
