@@ -33,8 +33,8 @@
 
           </div>
 
-            <article class="activity">
-              <h5>running</h5>
+            <article class="activity" ng-repeat="activity in activities">
+              <h5>{{activity.title}}</h5>
               <a href="#/stats"><span class="fa fa-caret-right"></span></a>
             </article>
 
@@ -44,12 +44,12 @@
 
 
 
-        <footer>
+        <section class="footer">
           <nav>
             <a href="#/panel-login">Home</a>
             <a href="#/activity">Activity</a>
             <a href="#/stats">Stats</a>
           </nav>
-        </footer>
+        </section>
 
         </div> <!-- END .MAIN-CONTENT-->

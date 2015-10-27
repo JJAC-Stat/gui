@@ -30,9 +30,13 @@ nav.date {
 }
 
 
-footer {
-  position: absolute;
+.footer {
   bottom: 0;
+  display: block;
+  right: 0;
+  left: 0;
+  text-align: center;
+
 }
 
 

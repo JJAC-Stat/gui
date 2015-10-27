@@ -29,8 +29,15 @@
     });
 
 
-}); //END .MODULE
+}) //END .MODULE
 
+.run(function($http, $rootScope){
+  $http.get('../activities.json')
+    .then(function (response){
+      console.log(arguments);
+      $rootScope.activities = response.data;
+      });
+    });
 
 
 
