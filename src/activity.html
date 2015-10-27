@@ -13,12 +13,29 @@
           <section class="container">
             <div class="logged-activities">
               <h4 class="logged">Logged Activites</h4>
-              <button class="add">+</button>
+              <button class="add-button">+</button>
+
+              <form class="add-drop-down">
+                <p>Activity</p>
+                <input type="text" class="text" placeholder="New Activity">
+                <input type="text" class="text" placeholder="Amount">
+                <p>unit</p> <!-- drop-down menu -->
+                  <select class="unit" name="unit">
+                    <option value="choose a unit">Choose a unit</option>
+                    <option value="miles">miles</option>
+                    <option value="reps">reps</option>
+                    <option value="minutes">minutes</option>
+                    <option value="hours">hours</option>
+                  </select><br><!-- END drop-down menu -->
+                  <input type="date">
+                <button type="submit" class="add-to-list">Add</button>
+              </form>
+
           </div>
 
             <article class="activity">
               <h5>running</h5>
-              <a href="#"><span class="fa fa-caret-right"></span></a>
+              <a href="#/stats"><span class="fa fa-caret-right"></span></a>
             </article>
 
           </section>

@@ -54,7 +54,7 @@ section.container {
         margin: 0;
       }
 
-      button.add {
+      button.add-button {
         display: inline-block;
         float: right;
       }
@@ -78,3 +78,46 @@ article.activity {
     }
 
 }
+
+.add-drop-down {
+    display: none;
+  }
+
+.add-drop-down.show {
+    // position: absolute;
+    display: block;
+    background: #ffffff;
+    border: 1px solid #CBC9C7;
+    padding: 0 5px 10px 5px;
+    right: -45px;
+    top: 50px;
+    // z-index:1; // overlays other elements
+
+            p {
+              text-transform: uppercase;
+              color: #CBC9C7;
+              font-size: 8pt;
+            }
+
+            .text {
+              border: 1px solid #D5D4D4;
+              outline: none;
+              padding: 5px 5px 4px;
+              font-size: 8pt;
+            }
+
+            button.add-to-list {
+              display: inline-block;
+              background: #3cb1cb;
+              font-size: 10pt;
+              color: #ffffff;
+              padding: 2px 11px;
+
+          }
+
+
+          select.unit {
+            margin: 2% 0;
+          }
+
+  } //.add-drop-down.show
