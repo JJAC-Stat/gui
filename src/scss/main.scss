@@ -110,8 +110,13 @@ main.container {
 header {
   @extend .grid;
   margin: 0 auto;
-  width: 80%;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
+
+        h1 {
+          font-weight: 100;
+        }
+
 }
 
 footer {
@@ -119,6 +124,7 @@ footer {
   margin: 0 auto;
   width: 80%;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
 
