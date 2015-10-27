@@ -99,7 +99,11 @@ textarea {
 @import 'activity';
 @import 'stats';
 
-
+main.container {
+  @extend .grid;
+  margin: 0 auto;
+  width: 80%;
+}
 
 
 
