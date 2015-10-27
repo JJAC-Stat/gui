@@ -10,7 +10,71 @@ header.activity {
   }
 }
 
+
+nav.date {
+  background: #eee;
+  color: #000000;
+  position: absolute;
+  top: 135px;
+  right: 0; left: 0;
+  display: inline-block;
+  text-align: center;
+
+  h3 {
+    margin-top: 2%; margin-bottom: 2%;
+    font-weight: 400;
+    display: inline-block;
+    text-align: center;
+  }
+
+}
+
+
 footer {
   position: absolute;
   bottom: 0;
+}
+
+
+section.container {
+  margin: 30% auto 0 auto;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.logged-activities {
+      padding: 5%;
+      background: #A3A3A3;
+      // border-radius: 3px;
+
+      h4.logged {
+        display: inline-block;
+        margin: 0;
+      }
+
+      button.add {
+        display: inline-block;
+        float: right;
+      }
+
+}
+
+article.activity {
+  padding: 3% 5%;
+  border: 1px solid #A3A3A3;
+
+    h5 {
+      margin: 0;
+      text-align: left;
+      width: 30%;
+      display: inline-block;
+      font-weight: 200;
+    }
+
+    .fa-caret-right {
+      display: inline-block;
+    }
+
 }
