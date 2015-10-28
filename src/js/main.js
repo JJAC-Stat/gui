@@ -46,7 +46,23 @@
 
     .when('/panel-login', {
       templateUrl: 'login.html',
-    })
+      controller: function($http){
+        var login = this;
+
+        login.user = { };
+
+        login.send = function(){
+          console.log(login.user);
+
+          //TODO: make a hash.. send the hash in the authorization header
+          // $http.get('https://aqueous-sea-6980.herokuapp.com/api/users.json');
+          //   headers: {
+          //     Authorization: ;
+          //   }
+        };
+      }
+
+    }) // END .WHEN LOGIN
 
     .when('/panel-signup', {
       templateUrl: 'signup.html',
@@ -62,11 +78,10 @@
   // $http.get('../activities.json')
     .then(function (response){
       console.log(arguments);
+      //
+      // $rootScope.activities = response.data[1];
+      $rootScope.activities = response.data;
 
-      $rootScope.activities = response.data[1];
-
-
-      // $rootScope.activities = response.data;
       });
     })
 
@@ -102,30 +117,29 @@
 
 
       // ACTIVITIES LIST
-      // .controller('listController', function($http, $scope) {
-      //   $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
-      //     .then(function (response){
-      //       $scope.activities = response.data;
-      //       // $scope.activity = response.data[id].activity;
-      //     });
-      // })
+      .controller('listController', function($http, $scope) {
+        $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
+          .then(function (response){
+            $scope.activities = response.data;
+            // $scope.activity = response.data[id].activity;
+          });
+      })
 
       // ADD ACTIVITY CONTROLLER
       .controller('activityController', function($scope, $http){
-            $scope.activity = {
-              title: '',
-              timestamp: ''
-            };
+            $scope.activity = { };
 
       $scope.addActivity = function(){
-        $http.post('https://aqueous-sea-6980.herokuapp.com/api/activities.json', $scope.activity);
-      };
-          $scope.activity = {
-            title: '',
-            timestamp: ''
-
-      };
-
+        $http.post('https://aqueous-sea-6980.herokuapp.com/api/activities.json', $scope.activity)
+          .then(function(){
+            console.log('did it work?');
+   });
+      //     $scope.activity = {
+      //       title: '',
+      //       timestamp: ''
+      //
+      // };
+    };
   }) // END ACTIVITY CONTROLLER
 
       .config(function($routeProvider, $locationProvider){

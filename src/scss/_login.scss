@@ -37,20 +37,8 @@ header.login {
       position: relative;
       border-radius: 3px;
 
-        // .google {
-        //   background: #D50F25;
-        //   width: 49%;
-        //   padding: 3% 3%;
-        //   border-radius: 3px;
-        // }
-        //
-        // .facebook {
-        //   background: #3b5998;
-        //   width: 49%;
-        //   float: right;
-        //   padding: 3% 3%;
-        //   border-radius: 3px;
-        // }
+
+
     }
 
     form.signup {
@@ -90,6 +78,17 @@ header.login {
       position: relative;
       text-align: center;
 
+        button.login {
+          display: inline-block;
+          color: #fff;
+          background: darken(#ADCC7E, 20%);
+          border: none;
+          // float: right;
+          vertical-align: middle;
+          margin-top: 2.5%;
+          margin-right: 2%;
+          padding: 1% 5%;
+        }
 
         button.sign-up {
           color: #ffffff;
@@ -124,7 +123,7 @@ header.login {
 .alternate {
   border: 1px solid #e6e6e6;
   padding: 1%;
-  width: 83%;
+  width: 91%;
   min-width: 300px;
   margin: 1% auto;
   margin-bottom: 5%;
