@@ -94,7 +94,6 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-@import 'home';
 @import 'login';
 @import 'activity';
 @import 'stats';
@@ -103,7 +102,6 @@ textarea {
 main.container {
   @extend .grid;
   margin: 0 auto;
-  width: 80%;
   font-family: 'Roboto', sans-serif;
 }
 

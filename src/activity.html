@@ -1,22 +1,31 @@
-
+<header class="activity">
+  <h2>activity</h2>
+</header>
+<nav class="date">
+  <a href="#/activity/{{activity.timestamp}}"><span class="fa fa-caret-left fa-2x"></span></a>
+  <h3>Today</h3>
+  <a href="#/activity/{{activity.timestamp}}"><span class="fa fa-caret-right fa-2x"></span></a>
+</nav>
 
         <div class="main-content"> <!-- ALL CONTENT WITHIN THIS TAG -->
-          <header class="activity">
-            <h2>activity</h2>
-          </header>
-          <nav>
-            <span>
-            <h3>Today</h3>
+          <section class="container">
+            <div class="logged-activities">
+              <h4 class="logged">Logged Activites</h4>
+              <a href="#/add" class=""><button class="add-button">+</button></a>
+          </div>
 
-          </nav>
+            <article class="activity" ng-repeat="activity in activities">
+              <h5>{{activity.title}}</h5>
+              <a href="#/stats/{{activity.id}}"><span class="fa fa-caret-right"></span></a>
+            </article>
+          </section>
 
-
-        <footer>
+        <section class="footer">
           <nav>
             <a href="#/panel-login" class="btm-nav">Home</a>
             <a href="#/activity" class="btm-nav">Activity</a>
             <a href="#/stats" class="btm-nav">Stats</a>
           </nav>
-        </footer>
+        </section>
 
         </div> <!-- END .MAIN-CONTENT-->

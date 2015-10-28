@@ -19,17 +19,15 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body ng-controller="mainController">
 
       <header>
         <h1>jac<strong>stat</strong> tracker</h1>
       </header>
 
-
-
-        <!-- Add your site or application content here -->
         <main class="container" ng-app='Jjac-Stat' ng-controller='SignupController'>
-          <ng-view/>
+          <ng-view><span class="fa fa-spinner"></span>
+        </ng-view>
 
       </main>
 
