@@ -11,11 +11,11 @@
   <section class="container">
 
     <section id="panel-add" class="panel active">
-      <form class="add-drop-down" ng-submit="addActivity($form)">
+      <form class="add-drop-down" ng-submit="addActivity()">
         <p>Activity</p>
-        <input type="text" class="text" placeholder="New Activity" ng-model="activity.title">
+        <input type="text" class="text" placeholder="New Activity" ng-model="activity.title"/>
         <p>Amount</p>
-        <input type="text" class="text" placeholder="Amount" ng-model="activity.datapoints">
+        <input type="text" class="text" placeholder="Amount" ng-model="activity.datapoints"/>
         <p>unit</p> <!-- drop-down menu -->
           <select class="unit" name="unit">
             <option value="choose a unit">Choose a unit</option>
@@ -25,9 +25,9 @@
             <option value="hours">hours</option>
           </select><br><!-- END drop-down menu -->
           <p>Date</p>
-          <input class="text" type="date" ng-model="activity.timestamp">
+          <!-- <input class="text" type="date" ng-model="activity.timestamp"> -->
         <a href="#/activity"><button type="submit" class="add-to-list">Add</button></a>
-      </form>
+      </form> <!-- END .form-container -->
     </section>
   </div>
 </section> <!--END CONTAINER-->
