@@ -10,10 +10,49 @@ header.activity {
   }
 }
 
-footer {
+nav.date {
+  background: #eee;
+  color: #000000;
   position: absolute;
-  bottom: 0;
+  top: 150px;
+  right: 0; left: 0;
+  display: inline-block;
+  text-align: center;
+
+  h3 {
+    margin-top: 2%; margin-bottom: 2%;
+    font-weight: 400;
+    display: inline-block;
+    text-align: center;
+  }
+
+}
+
+.footer {
+  margin-top: 10%;
+  display: block;
+  text-align: center;
   width: 100%;
+}
+
+
+.logged-activities {
+      padding: 5%;
+      background: #A3A3A3;
+
+      h4.logged {
+        display: inline-block;
+        margin: 0;
+      }
+
+      button.add-button {
+        display: inline-block;
+        float: right;
+
+          a[href] {
+            text-decoration: none;
+          }
+      }
 
   nav {
 
@@ -28,3 +67,76 @@ footer {
     }
   }
 }
+
+
+article.activity {
+  padding: 3% 5%;
+  border: 1px solid #A3A3A3;
+
+    h5 {
+      margin: 0;
+      text-align: left;
+      width: 30%;
+      display: inline-block;
+      font-weight: 200;
+    }
+
+    .fa-caret-right {
+      display: inline-block;
+    }
+
+}
+
+
+
+section.container {
+  margin: 30% auto 0 auto;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+
+  .add-button {
+    display: inline-block;
+  }
+
+  // ADD ACTIVITY FORM
+  .add-drop-down {
+      // position: absolute;
+      display: block;
+      background: #ffffff;
+      border: 1px solid #D5D4D4;
+      padding: 3%;
+      right: -45px;
+      top: 50px;
+      // z-index:1; // overlays other elements
+
+          p {
+            text-transform: uppercase;
+            color: #CBC9C7;
+            font-size: 8pt;
+          }
+
+          .text {
+            border: 1px solid #D5D4D4;
+            outline: none;
+            padding: 5px 5px 4px;
+            font-size: 8pt;
+            width: 80%;
+          }
+
+            button.add-to-list {
+              display: inline-block;
+              background: #3cb1cb;
+              font-size: 10pt;
+              color: #ffffff;
+              padding: 2px 11px;
+          }
+
+            select.unit {
+              margin-bottom: 2%;
+            }
+
+  } //.add-drop-down.show
+
+} //. END SECTION CONTAINER
