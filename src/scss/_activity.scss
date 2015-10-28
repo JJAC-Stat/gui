@@ -119,6 +119,7 @@ section.container {
       padding: 3%;
       right: -45px;
       top: 50px;
+      margin-top: 5%;
 
           p {
             text-transform: uppercase;
@@ -136,9 +137,8 @@ section.container {
 
             button.add-to-list {
               display: inline-block;
-              background: #3cb1cb;
               font-size: 10pt;
-              color: #ffffff;
+              color: #000;
               padding: 2px 11px;
           }
 
