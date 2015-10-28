@@ -22,19 +22,18 @@
       templateUrl: 'signup.html',
     });
 
-
 })
 
-.controller("SignupController", function($scope, $http){
-     $scope.signup = {
-       username: "",
-       email: "",
-       password: ""
-     };
+    .controller("SignupController", function($scope, $http){
+       $scope.signup = {
+         username: "",
+         email: "",
+         password: ""
+       };
 
-     $scope.submit = function(){
-       $http.post('https://aqueous-sea-6980.herokuapp.com/api/users/', $scope.signup)
-         .then(function(){
+       $scope.submit = function(){
+         $http.post('https://aqueous-sea-6980.herokuapp.com/api/users.json', $scope.signup)
+           .then(function(){
 
        });
      };

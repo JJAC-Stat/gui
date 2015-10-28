@@ -13,13 +13,11 @@
 <section id="panel-signup" class="panel active">
 <section class="form-container">
 
-  <form class="signup" ng-submit="submit()" name="signup">
-    <fieldset>
+  <form class="signup" ng-submit="submit($form)" name="signup">
     <label>Display Name<input type="text" name="name" placeholder="J. Dub" ng-model="signup.username"/></label>
     <label>Email<input type="email" name="email" placeholder="you@example.com" ng-model="signup.email"/></label>
     <label>Password<input type="password" name="password" placeholder="********" ng-model="signup.password"/></label>
-    <label>Confirm Password<input type="password" name="confirm" placeholder="********" ng-model="signup.confirm_password"/></label>
-  </fieldset>
+    <label>Confirm Password<input type="password" name="confirm" placeholder="********"/></label>
   <div class="signup-button">
     <button type="submit" class="signup">Sign up</button>
     <p>By registering, you agree to the privacy policy and terms of service.</p>
