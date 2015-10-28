@@ -1,8 +1,13 @@
+.main-content {
+  margin: 0 auto;
+  width: 90%;
+}
+
 header.activity {
   background: #7ECCC4;
   color: #ffffff;
-  position: absolute;
-  right: 0; left: 0;
+  padding: 1% 0;
+  width: 100%;
 
   h2 {
     margin-top: 2%; margin-bottom: 2%;
@@ -13,23 +18,28 @@ header.activity {
 nav.date {
   background: #eee;
   color: #000000;
-  position: absolute;
-  top: 150px;
-  right: 0; left: 0;
+  width: 100%;
   display: inline-block;
   text-align: center;
 
-  h3 {
-    margin-top: 2%; margin-bottom: 2%;
-    font-weight: 400;
-    display: inline-block;
-    text-align: center;
-  }
+      h3 {
+        margin-top: 2%; margin-bottom: 2%;
+        font-weight: 400;
+        display: inline-block;
+        text-align: center;
+        padding-right: 38%; padding-left: 38%;
+      }
+
+      .fa-caret-left, .fa-caret-right {
+        vertical-align: middle;
+        color: #000;
+      }
 
 }
 
 .footer {
   margin-top: 10%;
+  bottom: 0;
   display: block;
   text-align: center;
   width: 100%;
@@ -37,39 +47,42 @@ nav.date {
 
 
 .logged-activities {
-      padding: 5%;
-      background: #A3A3A3;
+    padding: 5%;
+    background: #A3A3A3;
 
       h4.logged {
         display: inline-block;
         margin: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-top: 1%;
       }
 
       button.add-button {
         display: inline-block;
+        color: #fff;
+        background: darken(#A3A3A3, 20%);
+        border: none;
         float: right;
 
-          a[href] {
-            text-decoration: none;
-          }
       }
 
-  nav {
+      nav {
 
-    a {
-      padding-left: 10px; padding-right: 10px;
-      text-decoration: none;
-      color: #007CCF;
-    }
+              a {
+                padding-left: 10px; padding-right: 10px;
+                text-decoration: none;
+                color: #007CCF;
+              }
 
-    a:hover {
-      color: #A9C6FF;
-    }
-  }
+              a:hover {
+                color: #A9C6FF;
+              }
+        }
 }
 
 
-article.activity {
+article.activity { // ACTIVITY LIST
   padding: 3% 5%;
   border: 1px solid #A3A3A3;
 
@@ -83,14 +96,14 @@ article.activity {
 
     .fa-caret-right {
       display: inline-block;
+      color: #000;
     }
 
 }
 
 
-
 section.container {
-  margin: 30% auto 0 auto;
+  margin: 0 auto;
   float: left;
   width: 100%;
   box-sizing: border-box;
@@ -102,14 +115,14 @@ section.container {
 
   // ADD ACTIVITY FORM
   .add-drop-down {
-      // position: absolute;
+      @extend .clearfix;
       display: block;
       background: #ffffff;
       border: 1px solid #D5D4D4;
       padding: 3%;
       right: -45px;
       top: 50px;
-      // z-index:1; // overlays other elements
+      margin-top: 5%;
 
           p {
             text-transform: uppercase;
@@ -122,15 +135,18 @@ section.container {
             outline: none;
             padding: 5px 5px 4px;
             font-size: 8pt;
-            width: 80%;
+            width: 75%;
           }
 
             button.add-to-list {
               display: inline-block;
-              background: #3cb1cb;
               font-size: 10pt;
-              color: #ffffff;
-              padding: 2px 11px;
+              display: inline-block;
+              color: #fff;
+              background: darken(#7ECCC4, 20%);
+              border: none;
+              float: right;
+              padding: 1% 5%;
           }
 
             select.unit {

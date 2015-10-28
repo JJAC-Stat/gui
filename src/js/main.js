@@ -69,8 +69,9 @@
 
 }) //END .MODULE
 
+
 .run(function($http, $rootScope){
-  $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities/')
+  $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
   // $http.get('../activities.json')
     .then(function (response){
       console.log(arguments);
@@ -84,30 +85,38 @@
         $scope.$routeParams = $routeParams;
       })
 
-
-      .controller('statsController', function($http, $scope, $routeParams) {
-        $scope.name = "statsController";
-        $scope.params = $routeParams;
-        var id = $routeParams.id -1;
-
-        $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities/')
+      // ACTIVITIES LIST
+      .controller('listController', function($http, $scope) {
+        $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
           .then(function (response){
-            $scope.activities = response.data[id];
-            $scope.activity = response.data[id].activity;
+            $scope.activities = response.data;
+            // $scope.activity = response.data[id].activity;
           });
-
-          // $http.get('https://blacajojo.herokuapp.com/answers')
-          //   .then(function (response){
-          //     $scope.answer = response.data[id].answer;
-          //   });
-
       })
+
+      // ADD ACTIVITY CONTROLLER
+      .controller('activityController', function($scope, $http){
+            $scope.activity = {
+              title: '',
+              timestamp: ''
+            };
+
+      $scope.addActivity = function(){
+        $http.post('https://aqueous-sea-6980.herokuapp.com/api/activities.json', $scope.activity);
+      };
+          $scope.activity = {
+            title: '',
+            timestamp: ''
+
+      };
+
+  }) // END ACTIVITY CONTROLLER
 
       .config(function($routeProvider, $locationProvider){
         $routeProvider
           .when('/stats/:id',{
             templateUrl: 'stats.html',
-            controller: 'statsController'
+            // controller: 'statsController'
           });
 
 
@@ -122,7 +131,7 @@
 
   //  ; //END .MODULE
 
-  })(); //END IIFE
+})(); //END IIFE
 
 
 
