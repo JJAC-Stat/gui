@@ -1,0 +1,45 @@
+header.stats {
+  background: #9D7ECC;
+  color: #ffffff;
+  padding: 1% 0;
+  text-align: center;
+
+  h2 {
+    margin-top: 2%; margin-bottom: 2%;
+    font-weight: 400;
+    display: inline-block;
+    margin-left: 10%;
+    text-align: center;
+  }
+
+  button.edit {
+    display: inline-block;
+    color: #fff;
+    background: darken(#9D7ECC, 20%);
+    border: none;
+    float: right;
+    vertical-align: middle;
+    margin-top: 2.5%;
+    margin-right: 2%;
+    padding: 1% 5%;
+  }
+
+  .fa-caret-left {
+    display: inline-block;
+    color: darken(#9D7ECC, 20%);
+    float: left;
+    vertical-align: middle;
+    margin-top: 2%;
+    margin-left: 2%;
+
+  }
+
+}
+
+.footer {
+  bottom: 0;
+  display: block;
+  right: 0;
+  left: 0;
+  text-align: center;
+}

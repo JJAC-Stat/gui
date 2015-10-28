@@ -1,0 +1,47 @@
+<div class="main-content"> <!-- ALL CONTENT WITHIN THIS TAG -->
+  <header class="signup">
+    <h2>signup</h2>
+  </header>
+
+<div class="main">
+  <nav class="tabs">
+    <a href="#panel-login" class="">Log in</a>
+    <a href="#panel-signup" class="active">Sign up</a>
+  </nav>
+
+<div class="tab-content">
+<section id="panel-signup" class="panel active">
+<section class="form-container">
+
+  <form class="signup" ng-submit="submit()" name="signup">
+    <fieldset>
+    <label>Display Name<input type="text" name="name" placeholder="J. Dub" ng-model="signup.username"/></label>
+    <label>Email<input type="email" name="email" placeholder="you@example.com" ng-model="signup.email"/></label>
+    <label>Password<input type="password" name="password" placeholder="********" ng-model="signup.password"/></label>
+    <label>Confirm Password<input type="password" name="confirm" placeholder="********" ng-model="signup.confirm_password"/></label>
+  </fieldset>
+  <div class="signup-button">
+    <button type="submit" class="signup">Sign up</button>
+    <p>By registering, you agree to the privacy policy and terms of service.</p>
+  </div>
+  </form>
+</section> <!-- END .form-container -->
+
+<section class="alternate">
+  <p>Already have an account? <a href="#panel-login">Log in</a></p>
+</section>
+
+</section> <!-- END panel-signup -->
+
+</div> <!-- END .tab-content -->
+</div> <!-- END .main -->
+
+<footer>
+  <nav class="btm-nav">
+    <a href="#/panel-login" class="btm-nav">Home</a>
+    <a href="#/activity" class="btm-nav">Activity</a>
+    <a href="#/stats" class="btm-nav">Stats</a>
+  </nav>
+</footer>
+
+</div> <!-- END .MAIN-CONTENT-->

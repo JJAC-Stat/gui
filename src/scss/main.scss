@@ -94,15 +94,37 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-@import 'home';
 @import 'login';
 @import 'activity';
 @import 'stats';
+@import 'signup';
+
+main.container {
+  @extend .grid;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
 
 
+header {
+  @extend .grid;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 
+        h1 {
+          font-weight: 100;
+        }
 
+}
 
+footer {
+  @extend .grid;
+  margin: 0 auto;
+  width: 80%;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
 
 
 

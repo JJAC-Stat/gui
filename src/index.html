@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>jac-stat</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,16 +14,21 @@
         <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
         <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" />
         <!--endbower-->
-
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body ng-controller="mainController">
 
+      <header>
+        <h1>jac<strong>stat</strong> tracker</h1>
+      </header>
 
-        <!-- Add your site or application content here -->
-        <main class="container">
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <main class="container" ng-app='Jjac-Stat' ng-controller='SignupController'>
+          <ng-view><span class="fa fa-spinner"></span>
+        </ng-view>
+
       </main>
 
 
