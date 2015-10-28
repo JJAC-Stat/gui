@@ -14,14 +14,14 @@
 
           <section id="panel-login" class="panel active"> <!-- panel-login -->
             <section class="form-container">
-              <form class="signup">
+              <form class="signup" ng-submit="submit()">
                 <fieldset>
-                <label>Email<input type="email" name="email" placeholder="you@example.com" ng-model="formvalues.email" /></label>
-                <label>Password<input type="password" name="password" placeholder="********" ng-model="formvalues.password" /></label>
+                <label>Email<input type="email" name="email" placeholder="you@example.com" ng-model="signup.email" /></label>
+                <label>Password<input type="password" name="password" placeholder="********" ng-model="signup.password" /></label>
               </fieldset>
               </form>
               <div class="signup-button">
-                <button class="login">Log in</button>
+                <button class="login" type="submit">Log in</button>
                 <p>By registering, you agree to the privacy policy and terms of service.</p>
               </div>
             </section> <!-- END .form-container -->

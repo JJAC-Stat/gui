@@ -1,4 +1,3 @@
-
 ;(function(){
 
   angular.module('Jjac-Stat', ['ngRoute'], function($routeProvider){
@@ -63,9 +62,25 @@
   // $http.get('../activities.json')
     .then(function (response){
       console.log(arguments);
-      $rootScope.activities = response.data;
+
+      $rootScope.activities = response.data[1];
+
+
+      // $rootScope.activities = response.data;
       });
     })
+
+.run(function($http, $rootScope){
+  $http.get('https://aqueous-sea-6980.herokuapp.com/api/users.json')
+
+    .then(function (response){
+      console.log(arguments);
+
+      $rootScope.signup = response.data;
+
+      });
+    })
+
 
     .controller('mainController', function($scope, $route, $routeParams, $location) {
         $scope.$route = $route;
@@ -74,32 +89,26 @@
       })
 
 
-    .controller("SignupController", function($scope, $http){
-         $scope.signup = {
-           username: "",
-           email: "",
-           password: ""
-         };
+    .controller('SignupController', function($scope, $http){
+         $scope.signup = { };
 
+       $scope.submit = function(){
+         $http.post('https://aqueous-sea-6980.herokuapp.com/api/users.json', $scope.signup)
+           .then(function(){
 
-           $scope.submit = function(){
-             $http.post('https://aqueous-sea-6980.herokuapp.com/api/users/', $scope.signup)
-               .then(function(){
-
-
-})
-
-
+      });
+   };
+}) // END SIGNUP CONTROLLER
 
 
       // ACTIVITIES LIST
-      .controller('listController', function($http, $scope) {
-        $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
-          .then(function (response){
-            $scope.activities = response.data;
-            // $scope.activity = response.data[id].activity;
-          });
-      })
+      // .controller('listController', function($http, $scope) {
+      //   $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
+      //     .then(function (response){
+      //       $scope.activities = response.data;
+      //       // $scope.activity = response.data[id].activity;
+      //     });
+      // })
 
       // ADD ACTIVITY CONTROLLER
       .controller('activityController', function($scope, $http){
@@ -131,9 +140,9 @@
 
 
 
-      //  });
-     };
-   }); // END LoginController
+
+    // };
+  //  }); // END LoginController
 
 
   //  ; //END .MODULE
