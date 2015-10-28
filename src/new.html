@@ -1,1 +1,36 @@
+<div class="main-content"> <!-- ALL CONTENT WITHIN THIS TAG -->
+  <header class="activity">
+    <h2>activity</h2>
+  </header>
+  <!-- <nav class="date">
+    <span class="fa fa-caret-left"></span>
+    <h3>Date</h3>
+    <span class="fa fa-caret-right"></span>
+  </nav> -->
 
+  <section class="container">
+
+    <section id="panel-add" class="panel active">
+      <form class="add-drop-down" ng-submit="addActivity($form)">
+        <p>Activity</p>
+        <input type="text" class="text" placeholder="New Activity" ng-model="activity.title">
+        <p>Amount</p>
+        <input type="text" class="text" placeholder="Amount" ng-model="activity.datapoints">
+        <p>unit</p> <!-- drop-down menu -->
+          <select class="unit" name="unit">
+            <option value="choose a unit">Choose a unit</option>
+            <option value="miles">miles</option>
+            <option value="reps">reps</option>
+            <option value="minutes">minutes</option>
+            <option value="hours">hours</option>
+          </select><br><!-- END drop-down menu -->
+          <p>Date</p>
+          <input class="text" type="date" ng-model="activity.timestamp">
+        <a href="#/activity"><button type="submit" class="add-to-list">Add</button></a>
+      </form>
+    </section>
+  </div>
+</section> <!--END CONTAINER-->
+
+
+</div> <!-- END .MAIN-CONTENT-->

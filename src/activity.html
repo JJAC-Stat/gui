@@ -13,35 +13,15 @@
           <section class="container">
             <div class="logged-activities">
               <h4 class="logged">Logged Activites</h4>
-              <a href="#/new"><button class="add-button">+</button></a>
-            <section class="add-drop-down">
-              <form class="add-drop-down" ng-submit="addActivity($form)">
-                <p>Activity</p>
-                <input type="text" class="text" placeholder="New Activity" ng-model="activity.title">
-                <input type="text" class="text" placeholder="Amount" ng-model="activity.datapoints">
-                <p>unit</p> <!-- drop-down menu -->
-                  <select class="unit" name="unit">
-                    <option value="choose a unit">Choose a unit</option>
-                    <option value="miles">miles</option>
-                    <option value="reps">reps</option>
-                    <option value="minutes">minutes</option>
-                    <option value="hours">hours</option>
-                  </select><br><!-- END drop-down menu -->
-                  <input type="date" ng-model="activity.timestamp">
-                <a href="#/activity/new"><button type="submit" class="add-to-list">Add</button></a>
-              </form>
-            </section>
+              <a href="#/add" class=""><button class="add-button">+</button></a>
+
           </div>
 
-            <article class="activity" ng-repeat="activity in activities">
+            <article id="panel-activity" class="activity panel active" ng-repeat="activity in activities">
               <h5>{{activity.title}}</h5>
               <a href="#/stats/{{activity.id}}"><span class="fa fa-caret-right"></span></a>
             </article>
-
           </section>
-
-
-
 
 
         <section class="footer">

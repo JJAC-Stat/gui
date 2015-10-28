@@ -14,7 +14,7 @@ nav.date {
   background: #eee;
   color: #000000;
   position: absolute;
-  top: 135px;
+  top: 150px;
   right: 0; left: 0;
   display: inline-block;
   text-align: center;
@@ -29,6 +29,7 @@ nav.date {
 }
 
 .footer {
+  margin-top: 10%;
   bottom: 0;
   display: block;
   right: 0;
@@ -41,7 +42,6 @@ nav.date {
 .logged-activities {
       padding: 5%;
       background: #A3A3A3;
-      // border-radius: 3px;
 
       h4.logged {
         display: inline-block;
@@ -51,9 +51,16 @@ nav.date {
       button.add-button {
         display: inline-block;
         float: right;
+
+          a[href] {
+            text-decoration: none;
+
+
+          }
       }
 
 }
+
 
 article.activity {
   padding: 3% 5%;
@@ -73,10 +80,6 @@ article.activity {
 
 }
 
-.add-drop-down {
-    display: none;
-  }
-
 
 
 section.container {
@@ -90,12 +93,13 @@ section.container {
     display: inline-block;
   }
 
-  .add-drop-down.show {
+  // ADD ACTIVITY FORM
+  .add-drop-down {
       // position: absolute;
       display: block;
       background: #ffffff;
-      border: 1px solid #CBC9C7;
-      padding: 0 5px 10px 5px;
+      border: 1px solid #D5D4D4;
+      padding: 3%;
       right: -45px;
       top: 50px;
       // z-index:1; // overlays other elements
@@ -111,6 +115,7 @@ section.container {
             outline: none;
             padding: 5px 5px 4px;
             font-size: 8pt;
+            width: 80%;
           }
 
             button.add-to-list {
@@ -122,7 +127,7 @@ section.container {
           }
 
             select.unit {
-              margin: 2% 0;
+              margin-bottom: 2%;
             }
 
   } //.add-drop-down.show

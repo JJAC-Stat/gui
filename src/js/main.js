@@ -11,7 +11,7 @@
       templateUrl: 'activity.html',
     })
 
-    .when('/new', {
+    .when('/add', {
       templateUrl: 'new.html',
       // controller: function ($location, activity) {
       //   var add = this;
