@@ -31,6 +31,7 @@ nav.date {
 .footer {
   margin-top: 10%;
   bottom: 0;
+<<<<<<< HEAD
   display: block;
   right: 0;
   left: 0;
@@ -59,6 +60,22 @@ nav.date {
           }
       }
 
+=======
+  width: 100%;
+
+  nav {
+
+    a {
+      padding-left: 10px; padding-right: 10px;
+      text-decoration: none;
+      color: #007CCF;
+    }
+
+    a:hover {
+      color: #A9C6FF;
+    }
+  }
+>>>>>>> d40cddd8f95b8829181947a23890adf534a68cb6
 }
 
 

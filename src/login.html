@@ -11,79 +11,35 @@
           </nav>
 
       <div class="tab-content">
-        <section id="panel-signup" class="panel">
-        <section class="form-container">
-          <div class="buttons">
-            <button class="google">Google</button>
-            <button class="facebook">Facebook</button>
-          </div>
-          <article class="line">
-            <hr class="or">
-            <p class="or">OR</p>
-          </article>
 
-          <form class="signup" ng-submit="submit()" name="login">
-            <fieldset>
-            <label>Display Name<input type="text" name="name" placeholder="J. Dub" ng-model="formvalues.name"/></label>
-            <label>Email<input type="text" name="email" placeholder="you@example.com" ng-model="formvalues.email"/></label>
-            <label>Password<input type="text" name="password" placeholder="********" ng-model="formvalues.password"/></label>
-            <label>Confirm Password<input type="text" name="confirm" placeholder="********" ng-model="formvalues.confirmpassword"/></label>
-          </fieldset>
-          <div class="signup-button">
-            <a href="#">more sign up options</a>
-            <button type="submit" class="sign-up">Sign up</button>
-            <p>By registering, you agree to the privacy policy and terms of service.</p>
-          </div>
-          </form>
-        </section> <!-- END .form-container -->
+          <section id="panel-login" class="panel active"> <!-- panel-login -->
+            <section class="form-container">
+              <form class="signup">
+                <fieldset>
+                <label>Email<input type="text" name="email" placeholder="you@example.com" ng-model="formvalues.email" /></label>
+                <label>Password<input type="text" name="password" placeholder="********" ng-model="formvalues.password" /></label>
+              </fieldset>
+              </form>
+              <div class="signup-button">
+                <button class="sign-up">Log in</button>
+                <p>By registering, you agree to the privacy policy and terms of service.</p>
+              </div>
+            </section> <!-- END .form-container -->
 
-        <section class="alternate">
-          <p>Already have an account? <a href="#panel-login">Log in</a></p>
-        </section>
-
-      </section> <!-- END panel-signup -->
-
-      <section id="panel-login" class="panel active"> <!-- panel-login -->
-        <section class="form-container">
-          <div class="buttons">
-            <button class="google">Google</button>
-            <button class="facebook">Facebook</button>
-          </div>
-          <article class="line">
-            <hr class="or">
-            <p class="or">OR</p>
-          </article>
-          <form class="signup">
-            <fieldset>
-            <label>Email<input type="text" name="email" placeholder="you@example.com" ng-model="formvalues.email" /></label>
-            <label>Password<input type="text" name="password" placeholder="********" ng-model="formvalues.password" /></label>
-          </fieldset>
-          </form>
-          <div class="signup-button">
-            <a href="#panel-signup">more login options</a>
-            <button class="sign-up">Log in</button>
-            <p>By registering, you agree to the privacy policy and terms of service.</p>
-          </div>
-        </section> <!-- END .form-container -->
-
-        <section class="alternate">
-          <p>Don't have an account? <a href="#panel-signup">Sign up</a></p>
-        </section>
-      </section> <!-- END panel-login -->
+            <section class="alternate">
+              <p>Don't have an account? <a href="#panel-signup">Sign up</a></p>
+            </section>
+          </section> <!-- END panel-login -->
 
       </div> <!-- END .tab-content -->
-    </div>
-
-
-
-
+    </div><!-- END .main -->
 
 
         <footer>
           <nav>
-            <a href="#/panel-login">Home</a>
-            <a href="#/activity">Activity</a>
-            <a href="#/stats">Stats</a>
+            <a href="#/panel-login" class="btm-nav">Home</a>
+            <a href="#/activity" class="btm-nav">Activity</a>
+            <a href="#/stats" class="btm-nav">Stats</a>
           </nav>
         </footer>
 
