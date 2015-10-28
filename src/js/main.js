@@ -41,6 +41,10 @@
       templateUrl: 'stats.html',
     })
 
+    .when('/stats/:id', {
+      templateUrl: 'stats.html',
+    })
+
     .when('/panel-login', {
       templateUrl: 'login.html',
     })
@@ -50,22 +54,6 @@
     });
 
 
-
-})
-
-
-
-.controller("SignupController", function($scope, $http){
-     $scope.signup = {
-       username: "",
-       email: "",
-       password: ""
-     };
-
-
-     $scope.submit = function(){
-       $http.post('https://aqueous-sea-6980.herokuapp.com/api/users/', $scope.signup)
-         .then(function(){
 
 }) //END .MODULE
 
@@ -84,6 +72,25 @@
         $scope.$location = $location;
         $scope.$routeParams = $routeParams;
       })
+
+
+    .controller("SignupController", function($scope, $http){
+         $scope.signup = {
+           username: "",
+           email: "",
+           password: ""
+         };
+
+
+           $scope.submit = function(){
+             $http.post('https://aqueous-sea-6980.herokuapp.com/api/users/', $scope.signup)
+               .then(function(){
+
+
+})
+
+
+
 
       // ACTIVITIES LIST
       .controller('listController', function($http, $scope) {
