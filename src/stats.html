@@ -5,8 +5,10 @@
 </header>
 
     <div class="main-content"> <!-- ALL CONTENT WITHIN THIS TAG -->
-      <section class="container" ng-repeat="activity in activities">
-          <p>{{activity.datapoints}}</p>
+      <section class="container">
+          <h2 class="stats">{{activity.title}}</h2>
+          <p class="start"><strong>start date:</strong> {{activity.timestamp}}</p>
+          <img class="graph" ng-src="https://aqueous-sea-6980.herokuapp.com/api/activities/{{activity.id}}/graph">
         </section>
 
 

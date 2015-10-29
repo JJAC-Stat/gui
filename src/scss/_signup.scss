@@ -1,5 +1,5 @@
 header.signup {
-  background: #FF5C33;
+  background: #CC7E86;
   color: #ffffff;
   position: absolute;
   right: 0; left: 0;
@@ -8,4 +8,16 @@ header.signup {
     margin-top: 2%; margin-bottom: 2%;
     font-weight: 400;
   }
+}
+
+button.signup {
+  display: inline-block;
+  color: #fff;
+  background: darken(#CC7E86, 20%);
+  border: none;
+  font-size: 12pt;
+  vertical-align: middle;
+  margin-top: 2.5%;
+  margin-right: 2%;
+  padding: 1% 5%;
 }

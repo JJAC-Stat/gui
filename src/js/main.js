@@ -1,4 +1,3 @@
-
 ;(function(){
 
   angular.module('Jjac-Stat', ['ngRoute'], function($routeProvider){
@@ -13,28 +12,7 @@
 
     .when('/add', {
       templateUrl: 'new.html',
-      // controller: function ($location, activity) {
-      //   var add = this;
-      //
-      //    add.user = { };
-      //
-      //   add.addActivity = function() {
-      //     activity.push(this.user);
-      //
-      //     this.user = { };
-      //
-      //     $location.path('/activity');
-      //
-      //     $http.post('https://aqueous-sea-6980.herokuapp.com/api/activities.json', $scope.activity)
-      //     .then(function() {
-      //       $scope.activity = response.data;
-      //
-      //     }); //END HTTP
-      //   };
-      //
-      // },
-      //
-      // controllerAs: 'editor'
+
     })
 
     .when('/stats', {
@@ -47,25 +25,69 @@
 
     .when('/panel-login', {
       templateUrl: 'login.html',
-    })
+      // controller: function($http){
+      //   var login = this;
+      //
+      //   login.user = { };
+      //
+      //   login.send = function(){
+      //     console.log(login.user);
+
+          //TODO: make a hash.. send the hash in the authorization header
+          // $http.get('https://aqueous-sea-6980.herokuapp.com/api/users.json', {username: 'polson', password: 'pbkdf2_sha256$20000$BN2sv0j9HHF5$l7nLCV1HYgBfnZVoBco9mrfjDzwDzkyYRko9gNnfaR0='}, {
+          //   headers: {
+          //     Authorization: "Basic " + btoa(login.user.username + ':' + login.user.password)
+          //   }
+
+      //
+      //     });
+      //
+      //   };
+      // }
+
+    }) // END .WHEN LOGIN
 
     .when('/panel-signup', {
       templateUrl: 'signup.html',
     });
 
 
-
 }) //END .MODULE
 
-
+// LIST OF ACTIVITIES
 .run(function($http, $rootScope){
   $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
-  // $http.get('../activities.json')
     .then(function (response){
       console.log(arguments);
+
       $rootScope.activities = response.data;
+
       });
     })
+
+
+// USERS
+.run(function($http, $rootScope){
+  $http.get('https://aqueous-sea-6980.herokuapp.com/api/users.json')
+
+    .then(function (response){
+      console.log(arguments);
+
+      $rootScope.signup = response.data;
+
+      });
+    })
+
+  // GRAPHS
+  // .run(function($http, $rootScope){
+  //   $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
+  //     .then(function (response){
+  //       console.log(arguments);
+  //
+  //       $rootScope.activities = response.data;
+  //
+  //       });
+  //     })
 
     .controller('mainController', function($scope, $route, $routeParams, $location) {
         $scope.$route = $route;
@@ -74,79 +96,62 @@
       })
 
 
-    .controller("SignupController", function($scope, $http){
-         $scope.signup = {
-           username: "",
-           email: "",
-           password: ""
-         };
+    .controller('SignupController', function($scope, $http){
+         $scope.signup = { };
 
+       $scope.submit = function(){
+         $http.post('https://aqueous-sea-6980.herokuapp.com/api/users.json', $scope.signup)
+           .then(function(){
 
-           $scope.submit = function(){
-             $http.post('https://aqueous-sea-6980.herokuapp.com/api/users/', $scope.signup)
-               .then(function(){
+      });
+   };
+}) // END SIGNUP CONTROLLER
 
-
-})
-
-
-
-
-      // ACTIVITIES LIST
-      .controller('listController', function($http, $scope) {
-        $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
-          .then(function (response){
-            $scope.activities = response.data;
-            // $scope.activity = response.data[id].activity;
-          });
+      .controller("loginController", function(){
+       this.user = {};
+       this.send = function(user){
+         console.log(this.user);
+         this.user = { };
+       };
       })
 
-      // ADD ACTIVITY CONTROLLER
-      .controller('activityController', function($scope, $http){
-            $scope.activity = {
-              title: '',
-              timestamp: ''
-            };
 
-      $scope.addActivity = function(){
-        $http.post('https://aqueous-sea-6980.herokuapp.com/api/activities.json', $scope.activity);
-      };
-          $scope.activity = {
-            title: '',
-            timestamp: ''
+      // ACTIVITY CONTROLLER
+      .controller('activityController', function($scope, $http, $routeParams){
+            $scope.activityadd = { };
+            $scope.name = "activityController";
+            $scope.params = $routeParams;
+            var id = $routeParams.id -5;
 
-      };
+        $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
+          .then(function (response){
+            $scope.activity = response.data[id];
+          });
 
-  }) // END ACTIVITY CONTROLLER
+            $scope.addActivity = function(){
+            $http.post('https://aqueous-sea-6980.herokuapp.com/api/activities.json', $scope.activityadd)
+              .then(function(){
+                console.log('success');
+      });
+   };
+}) // END ACTIVITY CONTROLLER
 
+      // NEED TO SHOW ONE ACTIVITY
       .config(function($routeProvider, $locationProvider){
         $routeProvider
           .when('/stats/:id',{
             templateUrl: 'stats.html',
-            // controller: 'statsController'
+            controller: 'activityController'
           });
 
-
-      });
-
+  }); // END CONFIG.
 
 
-      //  });
-     };
-   }); // END LoginController
-
-
-  //  ; //END .MODULE
 
 })(); //END IIFE
 
 
 
-
-  // When you click on the add button, menu drops down
-    $('button.add-button').on('click', function(){
-      $('.add-drop-down').toggleClass('show');
-    });
 
 
 // START tabs
