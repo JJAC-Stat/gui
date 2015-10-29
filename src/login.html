@@ -14,11 +14,11 @@
 
           <section id="panel-login" class="panel active"> <!-- panel-login -->
             <section class="form-container">
-              <form class="signup" ng-submit="send()">
+              <form class="signup" ng-submit="send(user)" ng-controller="loginController">
                 <fieldset>
-                <label>Username<input type="text" value="username" placeholder="username" ng-model="login.user.username" /></label>
-                <label>Email<input type="text" value="email" placeholder="your@email.com" ng-model="login.user.email" /></label>
-                <label>Password<input type="password" value="password" placeholder="********" ng-model="login.user.password" /></label>
+                <label>Username<input type="text" value="username" placeholder="username" ng-model="send.user.username" /></label>
+                <label>Email<input type="text" value="email" placeholder="your@email.com" ng-model="send.user.email" /></label>
+                <label>Password<input type="password" value="password" placeholder="********" ng-model="send.user.password" /></label>
               </fieldset>
               </form>
               <div class="signup-button">

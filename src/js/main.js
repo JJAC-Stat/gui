@@ -12,28 +12,7 @@
 
     .when('/add', {
       templateUrl: 'new.html',
-      // controller: function ($location, activity) {
-      //   var add = this;
-      //
-      //    add.user = { };
-      //
-      //   add.addActivity = function() {
-      //     activity.push(this.user);
-      //
-      //     this.user = { };
-      //
-      //     $location.path('/activity');
-      //
-      //     $http.post('https://aqueous-sea-6980.herokuapp.com/api/activities.json', $scope.activity)
-      //     .then(function() {
-      //       $scope.activity = response.data;
-      //
-      //     }); //END HTTP
-      //   };
-      //
-      // },
-      //
-      // controllerAs: 'editor'
+
     })
 
     .when('/stats', {
@@ -46,28 +25,31 @@
 
     .when('/panel-login', {
       templateUrl: 'login.html',
-      controller: function($http){
-        var login = this;
-
-        login.user = { };
-
-        login.send = function(){
-          console.log(login.user);
+      // controller: function($http){
+      //   var login = this;
+      //
+      //   login.user = { };
+      //
+      //   login.send = function(){
+      //     console.log(login.user);
 
           //TODO: make a hash.. send the hash in the authorization header
-          // $http.get('https://aqueous-sea-6980.herokuapp.com/api/users.json');
+          // $http.get('https://aqueous-sea-6980.herokuapp.com/api/users.json', {username: 'polson', password: 'pbkdf2_sha256$20000$BN2sv0j9HHF5$l7nLCV1HYgBfnZVoBco9mrfjDzwDzkyYRko9gNnfaR0='}, {
           //   headers: {
-          //     Authorization: ;
+          //     Authorization: "Basic " + btoa(login.user.username + ':' + login.user.password)
           //   }
-        };
-      }
+
+      //
+      //     });
+      //
+      //   };
+      // }
 
     }) // END .WHEN LOGIN
 
     .when('/panel-signup', {
       templateUrl: 'signup.html',
     });
-
 
 
 }) //END .MODULE
@@ -79,7 +61,7 @@
     .then(function (response){
       console.log(arguments);
       //
-      // $rootScope.activities = response.data[1];
+      // $rootScope.activity = response.data[1];
       $rootScope.activities = response.data;
 
       });
@@ -115,61 +97,51 @@
    };
 }) // END SIGNUP CONTROLLER
 
-
-      // ACTIVITIES LIST
-      .controller('listController', function($http, $scope) {
-        $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
-          .then(function (response){
-            $scope.activities = response.data;
-            // $scope.activity = response.data[id].activity;
-          });
+      .controller("loginController", function(){
+       this.user = {};
+       this.send = function(user){
+         console.log(this.user);
+         this.user = { };
+       };
       })
 
-      // ADD ACTIVITY CONTROLLER
-      .controller('activityController', function($scope, $http){
-            $scope.activity = { };
 
-      $scope.addActivity = function(){
-        $http.post('https://aqueous-sea-6980.herokuapp.com/api/activities.json', $scope.activity)
-          .then(function(){
-            console.log('did it work?');
-   });
-      //     $scope.activity = {
-      //       title: '',
-      //       timestamp: ''
-      //
-      // };
-    };
-  }) // END ACTIVITY CONTROLLER
+      // ACTIVITY CONTROLLER
+      .controller('activityController', function($scope, $http, $routeParams){
+            $scope.activityadd = { };
+            $scope.name = "activityController";
+            $scope.params = $routeParams;
+            var id = $routeParams.id -5;
 
+        $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
+          .then(function (response){
+            $scope.activity = response.data[id];
+          });
+
+            $scope.addActivity = function(){
+            $http.post('https://aqueous-sea-6980.herokuapp.com/api/activities.json', $scope.activityadd)
+              .then(function(){
+                console.log('success');
+      });
+   };
+}) // END ACTIVITY CONTROLLER
+
+      // NEED TO SHOW ONE ACTIVITY
       .config(function($routeProvider, $locationProvider){
         $routeProvider
           .when('/stats/:id',{
             templateUrl: 'stats.html',
-            // controller: 'statsController'
+            controller: 'activityController'
           });
 
-
-      });
-
+  }); // END CONFIG.
 
 
-
-    // };
-  //  }); // END LoginController
-
-
-  //  ; //END .MODULE
 
 })(); //END IIFE
 
 
 
-
-  // When you click on the add button, menu drops down
-    $('button.add-button').on('click', function(){
-      $('.add-drop-down').toggleClass('show');
-    });
 
 
 // START tabs
