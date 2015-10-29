@@ -54,19 +54,19 @@
 
 }) //END .MODULE
 
-
+// LIST OF ACTIVITIES
 .run(function($http, $rootScope){
   $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
-  // $http.get('../activities.json')
     .then(function (response){
       console.log(arguments);
-      //
-      // $rootScope.activity = response.data[1];
+
       $rootScope.activities = response.data;
 
       });
     })
 
+
+// USERS
 .run(function($http, $rootScope){
   $http.get('https://aqueous-sea-6980.herokuapp.com/api/users.json')
 
@@ -78,6 +78,16 @@
       });
     })
 
+  // GRAPHS
+  // .run(function($http, $rootScope){
+  //   $http.get('https://aqueous-sea-6980.herokuapp.com/api/activities.json')
+  //     .then(function (response){
+  //       console.log(arguments);
+  //
+  //       $rootScope.activities = response.data;
+  //
+  //       });
+  //     })
 
     .controller('mainController', function($scope, $route, $routeParams, $location) {
         $scope.$route = $route;
