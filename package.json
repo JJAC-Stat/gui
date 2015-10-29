@@ -1,6 +1,6 @@
 {
   "name": "JJAC-Stat--gui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "activity log",
   "main": "src/index.html",
   "scripts": {
